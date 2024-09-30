@@ -128,10 +128,6 @@ BabyPy offers a wide range of functionalities across various domains:
 
 For detailed documentation on all available functions and their usage, please visit our [Wiki](https://github.com/yourusername/babypy/wiki).
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for more information.
-
 ## 📄 License
 
 BabyPy is released under the MIT License. See the [LICENSE](LICENSE) file for details.
