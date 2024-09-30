@@ -783,63 +783,640 @@ make_heatmap([[1, 2, 3], [4, 5, 6], [7, 8, 9]], title="My Heatmap")
 
 ## Game Development
 
-// ... (continue documenting all functions in the Game Development category)
+### start_game(width=800, height=600, title="My Game")
+Start a new game window.
+
+**Parameters:**
+- `width`: The width of the game window (default: 800).
+- `height`: The height of the game window (default: 600).
+- `title`: The title of the game window (default: "My Game").
+
+**Returns:**
+- A pygame screen object.
+
+**Example:**
+```python
+screen = start_game(width=1024, height=768, title="My Awesome Game")
+```
+
+### draw_circle(screen, color, position, radius)
+Draw a circle in the game.
+
+**Parameters:**
+- `screen`: The pygame screen to draw on.
+- `color`: The color of the circle (as an RGB tuple).
+- `position`: The (x, y) position of the circle's center.
+- `radius`: The radius of the circle.
+
+**Example:**
+```python
+draw_circle(screen, (255, 0, 0), (100, 100), 50)
+```
+
+### draw_rectangle(screen, color, position, size)
+Draw a rectangle in the game.
+
+**Parameters:**
+- `screen`: The pygame screen to draw on.
+- `color`: The color of the rectangle (as an RGB tuple).
+- `position`: The (x, y) position of the top-left corner of the rectangle.
+- `size`: The (width, height) of the rectangle.
+
+**Example:**
+```python
+draw_rectangle(screen, (0, 255, 0), (200, 200), (100, 50))
+```
+
+### update_game()
+Update the game display.
+
+**Example:**
+```python
+update_game()
+```
+
+### end_game()
+End the game.
+
+**Example:**
+```python
+end_game()
+```
+
+### load_image(filename)
+Load an image for use in the game.
+
+**Parameters:**
+- `filename`: The name of the image file to load.
+
+**Returns:**
+- A pygame image object.
+
+**Example:**
+```python
+player_image = load_image("player.png")
+```
+
+### draw_image(screen, image, position)
+Draw an image on the game screen.
+
+**Parameters:**
+- `screen`: The pygame screen to draw on.
+- `image`: The pygame image object to draw.
+- `position`: The (x, y) position to draw the image at.
+
+**Example:**
+```python
+draw_image(screen, player_image, (100, 100))
+```
+
+### get_key_pressed()
+Get the current pressed key.
+
+**Returns:**
+- A dictionary-like object representing the state of all keyboard buttons.
+
+**Example:**
+```python
+keys = get_key_pressed()
+if keys[pygame.K_SPACE]:
+    print("Space bar is pressed!")
+```
+
+### make_sound(filename)
+Create a sound object from a file.
+
+**Parameters:**
+- `filename`: The name of the sound file to load.
+
+**Returns:**
+- A pygame sound object.
+
+**Example:**
+```python
+jump_sound = make_sound("jump.wav")
+```
+
+### play_sound(sound)
+Play a sound.
+
+**Parameters:**
+- `sound`: The pygame sound object to play.
+
+**Example:**
+```python
+play_sound(jump_sound)
+```
+
+### create_sprite(image_path, x, y)
+Create a simple sprite for Pygame.
+
+**Parameters:**
+- `image_path`: The file path to the sprite's image.
+- `x`: The initial x-coordinate of the sprite.
+- `y`: The initial y-coordinate of the sprite.
+
+**Returns:**
+- A pygame sprite object.
+
+**Example:**
+```python
+player_sprite = create_sprite("player.png", 100, 100)
+```
+
+### detect_collision(sprite1, sprite2)
+Detect collision between two sprites.
+
+**Parameters:**
+- `sprite1`: The first sprite to check for collision.
+- `sprite2`: The second sprite to check for collision.
+
+**Returns:**
+- True if the sprites are colliding, False otherwise.
+
+**Example:**
+```python
+if detect_collision(player_sprite, enemy_sprite):
+    print("Collision detected!")
+```
 
 ## Web Development and Scraping
 
-// ... (continue documenting all functions in the Web Development and Scraping category)
+### get_webpage(url)
+Get the content of a webpage.
+
+**Parameters:**
+- `url`: The URL of the webpage to fetch.
+
+**Returns:**
+- The HTML content of the webpage as a string.
+
+**Example:**
+```python
+content = get_webpage("https://www.example.com")
+```
+
+### download_file(url, filename)
+Download a file from a URL.
+
+**Parameters:**
+- `url`: The URL of the file to download.
+- `filename`: The name to save the downloaded file as.
+
+**Example:**
+```python
+download_file("https://example.com/image.jpg", "downloaded_image.jpg")
+```
+
+### parse_html(html)
+Parse HTML content.
+
+**Parameters:**
+- `html`: The HTML content to parse.
+
+**Returns:**
+- A BeautifulSoup object representing the parsed HTML.
+
+**Example:**
+```python
+soup = parse_html(content)
+```
+
+### find_all_tags(soup, tag)
+Find all occurrences of a specific tag in parsed HTML.
+
+**Parameters:**
+- `soup`: A BeautifulSoup object containing parsed HTML.
+- `tag`: The HTML tag to search for.
+
+**Returns:**
+- A list of all matching tags.
+
+**Example:**
+```python
+links = find_all_tags(soup, 'a')
+```
+
+### run_web_server(host='0.0.0.0', port=5000)
+Run a simple web server.
+
+**Parameters:**
+- `host`: The host to run the server on (default: '0.0.0.0').
+- `port`: The port to run the server on (default: 5000).
+
+**Example:**
+```python
+run_web_server()
+```
+
+### scrape_dynamic_content(url, element_id, timeout=10)
+Scrape content from a dynamic website.
+
+**Parameters:**
+- `url`: The URL of the dynamic website.
+- `element_id`: The ID of the element to wait for and scrape.
+- `timeout`: The maximum time to wait for the element (default: 10 seconds).
+
+**Returns:**
+- The text content of the specified element.
+
+**Example:**
+```python
+content = scrape_dynamic_content("https://example.com", "dynamic-content")
+```
+
+### get_all_links(url)
+Get all links from a webpage.
+
+**Parameters:**
+- `url`: The URL of the webpage to scrape links from.
+
+**Returns:**
+- A list of all href values found in the webpage.
+
+**Example:**
+```python
+links = get_all_links("https://www.example.com")
+```
+
+### download_image(url, filename)
+Download an image from a URL.
+
+**Parameters:**
+- `url`: The URL of the image to download.
+- `filename`: The name to save the downloaded image as.
+
+**Example:**
+```python
+download_image("https://example.com/image.jpg", "downloaded_image.jpg")
+```
 
 ## Database Operations
 
-// ... (continue documenting all functions in the Database Operations category)
+### connect_to_db(db_name)
+Connect to a SQLite database.
+
+**Parameters:**
+- `db_name`: The name of the database file.
+
+**Returns:**
+- A database connection object.
+
+**Example:**
+```python
+conn = connect_to_db("my_database.db")
+```
+
+### run_query(connection, query)
+Run a SQL query on the database.
+
+**Parameters:**
+- `connection`: A database connection object.
+- `query`: The SQL query to execute.
+
+**Returns:**
+- The results of the query as a list of tuples.
+
+**Example:**
+```python
+results = run_query(conn, "SELECT * FROM users")
+```
+
+### close_db(connection)
+Close the database connection.
+
+**Parameters:**
+- `connection`: The database connection to close.
+
+**Example:**
+```python
+close_db(conn)
+```
 
 ## Network Operations
 
-// ... (continue documenting all functions in the Network Operations category)
+### get_ip_address()
+Get the machine's IP address.
+
+**Returns:**
+- The IP address as a string.
+
+**Example:**
+```python
+ip = get_ip_address()
+```
+
+### ping_address(address)
+Ping an IP address or domain.
+
+**Parameters:**
+- `address`: The IP address or domain to ping.
+
+**Returns:**
+- True if the ping was successful, False otherwise.
+
+**Example:**
+```python
+is_reachable = ping_address("www.example.com")
+```
+
+### get_public_ip()
+Get the public IP address.
+
+**Returns:**
+- The public IP address as a string.
+
+**Example:**
+```python
+public_ip = get_public_ip()
+```
+
+### is_port_open(host, port)
+Check if a port is open on a given host.
+
+**Parameters:**
+- `host`: The host to check.
+- `port`: The port number to check.
+
+**Returns:**
+- True if the port is open, False otherwise.
+
+**Example:**
+```python
+is_open = is_port_open("example.com", 80)
+```
+
+These functions provide basic network operations, allowing users to retrieve IP addresses, ping hosts, and check for open ports. This simplifies network-related tasks for beginners while still providing essential functionality.
 
 ## Encryption and Security
 
-// ... (continue documenting all functions in the Encryption and Security category)
+### make_hash(text)
+Create a hash of the given text.
+
+**Parameters:**
+- `text`: The text to hash.
+
+**Returns:**
+- The hash of the text as a hexadecimal string.
+
+**Example:**
+```python
+hash_value = make_hash("Hello, World!")
+```
 
 ## System Operations
 
-// ... (continue documenting all functions in the System Operations category)
+### get_system_info()
+Get basic system information.
+
+**Returns:**
+- A dictionary containing system information.
+
+**Example:**
+```python
+info = get_system_info()
+print(f"Operating System: {info['system']}")
+print(f"Version: {info['version']}")
+print(f"Machine: {info['machine']}")
+```
 
 ## Audio Processing
 
-// ... (continue documenting all functions in the Audio Processing category)
+### record_audio(filename, duration=5, sample_rate=44100, channels=2, chunk=1024)
+Record audio for a specified duration.
+
+**Parameters:**
+- `filename`: The name of the file to save the recording.
+- `duration`: The duration of the recording in seconds (default: 5).
+- `sample_rate`: The sample rate of the recording (default: 44100).
+- `channels`: The number of audio channels (default: 2).
+- `chunk`: The size of audio chunks to process (default: 1024).
+
+**Example:**
+```python
+record_audio("my_recording.wav", duration=10)
+```
 
 ## Machine Learning
 
-// ... (continue documenting all functions in the Machine Learning category)
+### simple_linear_regression(X, y)
+Perform simple linear regression.
+
+**Parameters:**
+- `X`: The input features (independent variables).
+- `y`: The target values (dependent variable).
+
+**Returns:**
+- A tuple containing the trained model and the mean squared error.
+
+**Example:**
+```python
+X = [[1], [2], [3], [4], [5]]
+y = [2, 4, 5, 4, 5]
+model, mse = simple_linear_regression(X, y)
+print(f"Mean Squared Error: {mse}")
+```
 
 ## Natural Language Processing
 
-// ... (continue documenting all functions in the Natural Language Processing category)
+### tokenize_text(text)
+Tokenize text into words.
+
+**Parameters:**
+- `text`: The text to tokenize.
+
+**Returns:**
+- A list of tokens (words).
+
+**Example:**
+```python
 
 ## Image Processing
 
-// ... (continue documenting all functions in the Image Processing category)
+### open_image(filename)
+Open an image file.
+
+**Parameters:**
+- `filename`: The name of the image file to open.
+
+**Returns:**
+- A PIL Image object.
+
+**Example:**
+```python
+image = open_image("example.jpg")
+```
+
+### save_image(image, filename)
+Save an image to a file.
+
+**Parameters:**
+- `image`: The PIL Image object to save.
+- `filename`: The name of the file to save the image as.
+
+**Example:**
+```python
+save_image(image, "saved_image.jpg")
+```
+
+### resize_image(image, size)
+Resize an image.
+
+**Parameters:**
+- `image`: The PIL Image object to resize.
+- `size`: A tuple containing the new (width, height) of the image.
+
+**Returns:**
+- A new PIL Image object with the specified size.
+
+**Example:**
+```python
+resized_image = resize_image(image, (300, 200))
+```
+
+### rotate_image(image, degrees)
+Rotate an image.
+
+**Parameters:**
+- `image`: The PIL Image object to rotate.
+- `degrees`: The number of degrees to rotate the image.
+
+**Returns:**
+- A new PIL Image object that has been rotated.
+
+**Example:**
+```python
+rotated_image = rotate_image(image, 90)
+```
+
+### apply_filter(image, filter_name)
+Apply a filter to an image.
+
+**Parameters:**
+- `image`: The PIL Image object to apply the filter to.
+- `filter_name`: The name of the filter to apply. Can be 'blur', 'sharpen', or 'emboss'.
+
+**Returns:**
+- A new PIL Image object with the filter applied.
+
+**Example:**
+```python
+blurred_image = apply_filter(image, 'blur')
+```
+
+### crop_image(image, box)
+Crop an image to a specific region.
+
+**Parameters:**
+- `image`: The PIL Image object to crop.
+- `box`: A tuple defining the region to crop (left, upper, right, lower).
+
+**Returns:**
+- A new PIL Image object that has been cropped.
+
+**Example:**
+```python
+cropped_image = crop_image(image, (100, 100, 300, 300))
+```
 
 ## Computer Vision
 
-// ... (continue documenting all functions in the Computer Vision category)
+### capture_image(camera=0)
+Capture an image from the camera.
+
+**Parameters:**
+- `camera`: The index of the camera to use (default is 0 for the primary camera).
+
+**Returns:**
+- A numpy array representing the captured image.
+
+**Example:**
+```python
+frame = capture_image()
+```
+
+### save_image_cv2(image, filename)
+Save an image using OpenCV.
+
+**Parameters:**
+- `image`: The numpy array representing the image to save.
+- `filename`: The name of the file to save the image as.
+
+**Example:**
+```python
+save_image_cv2(frame, "captured_image.jpg")
+```
+
+These functions provide basic image processing and computer vision capabilities using the PIL (Python Imaging Library) and OpenCV libraries. They allow users to open, save, resize, rotate, and apply filters to images, as well as capture images from a camera. These operations are commonly used in various image processing and computer vision tasks.
 
 ## Geocoding
 
-// ... (continue documenting all functions in the Geocoding category)
+### get_coordinates(address)
+Get latitude and longitude for an address.
+
+**Parameters:**
+- `address`: The address to geocode.
+
+**Returns:**
+- A tuple containing (latitude, longitude) if the address is found, or None if not found.
+
+**Example:**
+```python
+coords = get_coordinates("1600 Amphitheatre Parkway, Mountain View, CA")
+if coords:
+    print(f"Latitude: {coords[0]}, Longitude: {coords[1]}")
+else:
+    print("Address not found")
+```
 
 ## Text-to-Speech
 
-// ... (continue documenting all functions in the Text-to-Speech category)
+### text_to_speech(text)
+Convert text to speech and play it.
+
+**Parameters:**
+- `text`: The text to convert to speech.
+
+**Example:**
+```python
+text_to_speech("Hello, world! This is BabyPy speaking.")
+```
+
+This function uses the pyttsx3 library to convert text to speech and play it through the default audio output device. It doesn't return any value but produces audible speech output.
 
 ## QR Code Generation
 
-// ... (continue documenting all functions in the QR Code Generation category)
+### create_qr_code(data, filename)
+Create a QR code and save it to a file.
+
+**Parameters:**
+- `data`: The data to encode in the QR code.
+- `filename`: The name of the file to save the QR code image as.
+
+**Example:**
+```python
+create_qr_code("https://example.com", "my_qr_code.png")
+```
+
+This function creates a QR code containing the specified data and saves it as an image file. The QR code is generated with a version 1 format, a box size of 10, and a border of 5 units. The resulting image has a black foreground on a white background.
 
 ## PDF Manipulation
 
-// ... (continue documenting all functions in the PDF Manipulation category)
+### merge_pdfs(pdf_files, output_filename)
+Merge multiple PDF files into one.
+
+**Parameters:**
+- `pdf_files`: A list of filenames or file paths of the PDF files to merge.
+- `output_filename`: The name of the file to save the merged PDF as.
+
+**Example:**
+```python
+merge_pdfs(["file1.pdf", "file2.pdf", "file3.pdf"], "merged_output.pdf")
+```
+
+This function takes multiple PDF files and combines them into a single PDF file. The PDFs are merged in the order they are provided in the `pdf_files` list. Each page from each input PDF is added to the output PDF in sequence.
+
+Note: This function uses the PyPDF2 library, which may have limitations with certain types of PDF files, especially those with complex formatting or security features.
 
 ## Data Compression
 
