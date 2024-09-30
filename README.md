@@ -126,7 +126,7 @@ BabyPy offers a wide range of functionalities across various domains:
 
 ## 📚 Documentation
 
-For detailed documentation on all available functions and their usage, please visit our [Wiki](https://github.com/yourusername/babypy/wiki).
+For detailed documentation on all available functions and their usage, please see our [Wiki](wiki.md).
 
 ## 📄 License
 
