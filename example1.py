@@ -52,7 +52,7 @@ easy.say(f"Sum: {easy.add_up(numbers)}")
 easy.say(f"Average: {easy.find_middle(numbers)}")
 
 filename = "example.txt"
-easy.write_file(filename, "Hello, PyEasy!")
+easy.write_file(filename, "Hello, BabyPy!")
 easy.add_to_file(filename, " This is awesome!")
 content = easy.read_file(filename)
 easy.say(f"File content: {content}")
@@ -110,7 +110,7 @@ easy.say(f"Word frequency in 'hello world': {easy.get_word_frequency('hello worl
 
 easy.say(f"Longest word in 'Python is awesome': {easy.find_longest_word('Python is awesome')}")
 
-easy.create_qr_code("https://example.com", "qr_code.png")
+easy.create_qr_code("https://jagathsajjan.vercel.app/", "qr_code.png")
 easy.say("QR code created: qr_code.png")
 
 compressed = easy.compress_data("Hello, World!")
